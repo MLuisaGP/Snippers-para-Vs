@@ -1,0 +1,23 @@
+{
+	"media query":{
+		"prefix": "mq",
+		"body":[
+			"@include mix.$1 {\n\t$2\n}"
+		],
+		"description": "usando Mediaquery de mixins"
+	},
+	"importar mixins":{
+		"prefix":"imm",
+		"body":[
+			"@use 'base/mixins' as mix;"
+		],
+		"description": "Importar los mixis"
+	},
+	"importar variables":{
+		"prefix":"imv",
+		"body":[
+			"@use 'base/variables' as var;"
+		],
+		"description": "Importar las variables"
+	}
+}

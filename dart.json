@@ -1,0 +1,46 @@
+{
+	"Color theme": {
+		"prefix": "color-theme",
+		"body": [
+			"final color = Theme.of(context).colorScheme;"
+		],
+		"description": "Theme Colors"
+	},
+	"Text theme": {
+		"prefix": "txt-theme",
+		"body": [
+			"final textTheme = Theme.of(context).textTheme;"
+		],
+		"description": "Theme text"
+	},
+	"Size media": {
+		"prefix": "size-media",
+		"body": [
+			"final Size size = MediaQuery.of(context).size;"
+		],
+		"description": "Tamaño del dispositivo"
+	},
+
+	"Flutter Page": {
+		"prefix": "fl-page",
+		"body": [
+			"import 'package:flutter/material.dart';",
+			"",
+			"",
+			"class ${TM_FILENAME_BASE/((^[a-z])|_([a-z]))/${2:/upcase}${3:/upcase}/g} extends StatelessWidget {",
+			"const ${TM_FILENAME_BASE/((^[a-z])|_([a-z]))/${2:/upcase}${3:/upcase}/g}({super.key});",
+			"  @override",
+			"  Widget build(BuildContext context) {",
+			"    return Scaffold(",
+			"      body: Center(",
+			"        child: ${2:Text('Hello World')},",
+			"     ),",
+			"   );",
+			"  }",
+			"}"
+		],
+		"description": "Crea una página de flutter fácilmente"
+	}
+
+	
+}

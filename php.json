@@ -1,0 +1,63 @@
+{
+		"Imprimir inf valores":{
+		"prefix": "edum",
+		"body":[
+			"echo '<pre>'; var_dump($1); echo '</pre>';"
+		]
+	},
+	"Request Method":{
+		"prefix": "metpost",
+		"body":[
+			"if(\\$_SERVER['REQUEST_METHOD']==='POST'){",
+			"\t$1",
+			"}"
+		]
+	},
+	"Seccion start":{
+		"prefix": "iniciar-session",
+		"body":[
+			"if (session_status() == PHP_SESSION_NONE) {",
+            "session_start();",
+        "}\n$1"
+		]
+	},
+	"Active Recor Sc":{
+		"prefix": "activerecord",
+		"body":[
+			"namespace Model;",
+			"class ${TM_FILENAME_BASE/((^[a-z])|_([a-z]))/${2:/upcase}${3:/upcase}/g} extends ActiveRecord{",
+			"\t//Base de datos",
+			"\tprotected static $$tabla = '${2:nombreTabla}';",
+			"\tprotected static $$idName ='${3:id}';",
+			"\tprotected static $$columnasDB=[",
+				"\t\t'${3:id}',",
+				"\t\t'${4:col1}',",
+				"\t\t'${5:col2}',",
+				"\t\t'${6:col3}'",
+			"\t];",
+		
+				"\tprotected $${3:id};",
+				"\tprotected $${4:col1};",
+				"\tprotected $${5:col2};",
+				"\tprotected $${6:col3};",
+		
+				"\tpublic function __construct($$args =[]){",
+		
+					"\t\t$$this->${3:id}=$$args['${3:id}']??null;",
+					"\t\t$$this->${4:col1}=$$args['${4:col1}']??'';",
+					"\t\t$$this->${5:col2}=$$args['${5:col2}']??'';",
+					"\t\t$$this->${6:col3}=$$args['${6:col3}']??'';",
+				"\t}",
+		
+				
+				"\tpublic function validar(){",
+					"\t\tif(!$$this->${4:col1}){",
+						"\t\t\tself::$$alertas['error'][]='El ${4:col1} es obligatorio';",
+					"\t\t}",
+					"\t\treturn self::$$alertas;",
+				"\t}",
+			"}"
+		]
+	}
+
+}

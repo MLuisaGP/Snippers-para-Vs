@@ -1,0 +1,26 @@
+{
+	"imagenes":{
+		"prefix":"pics",
+		"body":[
+			"<picture>",
+			"\t<source srcset=\"build/img/$1.avif\" type=\"image/avif\">",
+			"\t<source srcset=\"build/img/$1.webp\" type=\"image/webp\">",
+			"\t<img loading=\"lazy\" width=\"200\" height=\"300\" src=\"build/img/$2\" alt=\"$3\">",
+			"</picture>"
+		]
+	},
+	"Shorcut PHP en HTML":{
+		"prefix": "php",
+		"body":[
+			"<?php $1 ?>"
+		]
+	},
+	"Shorcut PHP ":{
+		"prefix": "pphp",
+		"body":[
+			"<?php",
+			"\t$1",
+			"?>"
+		]
+	}
+}
