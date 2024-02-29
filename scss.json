@@ -6,6 +6,13 @@
 		],
 		"description": "usando Mediaquery de mixins"
 	},
+	"usar mixin":{
+		"prefix": "mix",
+		"body":[
+			"@include mix.$1;\n$2"
+		],
+		"description": "Forma rapida para usar el mixin"
+	},
 	"importar mixins":{
 		"prefix":"imm",
 		"body":[
